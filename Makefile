@@ -1,7 +1,5 @@
 .DEFAULT_GOAL := help
 
-SSH_USER="isucon"
-SSH_HOST="isucon7-qualify"
 DATETIME=$(shell date "+%Y%m%d-%H%M%S")
 
 include include/nginx.mk
