@@ -32,7 +32,7 @@ node.nodebrew.install.binary.latest:
 	@make node.nodebrew.execute COMMAND="install-binary latest"
 
 ## Node.npm
-APP_DIRECTORY="/home/isucon/isubata/webapp/nodejs"
+APP_DIRECTORY="/home/isucon/webapp/js"
 node.npm.version:
 	@ssh $(SSH_USER)@$(SSH_HOST) /home/isucon/.nodebrew/current/bin/npm --version
 

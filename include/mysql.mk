@@ -46,14 +46,21 @@ MYSQL_USER="isucon"
 MYSQL_PASSWORD="isucon"
 MYSQL_DB_NAME="isubata"
 mysql:
-	@ssh -t $(SSH_USER)@$(SSH_HOST) mysql -u$(MYSQL_USER) -p$(MYSQL_PASSWORD) $(MYSQL_DB_NAME)
+	@ssh -t $(SSH_USER)@$(SSH_HOST) mysql -u$(MYSQL_USER) -p$(MYSQL_PASSWORD)
+
+mysql.isuda:
+	@ssh -t $(SSH_USER)@$(SSH_HOST) mysql -u$(MYSQL_USER) -p$(MYSQL_PASSWORD) isuda
+
+mysql.isutar:
+	@ssh -t $(SSH_USER)@$(SSH_HOST) mysql -u$(MYSQL_USER) -p$(MYSQL_PASSWORD) isutar
+
 
 mysql.command.show.databases:
 	@make mysql.execute SQL='show databases;'
 
 mysql.execute:
 	@echo $$SQL
-	@ssh $(SSH_USER)@$(SSH_HOST) mysql -u$(MYSQL_USER) -p$(MYSQL_PASSWORD) $(MYSQL_DB_NAME) -e "'$$SQL'"
+	@ssh $(SSH_USER)@$(SSH_HOST) mysql -u$(MYSQL_USER) -p$(MYSQL_PASSWORD) -e "'$$SQL'"
 
 
 mysql.slowlog.enable:
