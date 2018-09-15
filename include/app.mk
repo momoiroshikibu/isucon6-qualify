@@ -15,7 +15,7 @@ app.service.pull:
 	@scp -p $(SSH_USER)@$(SSH_HOST):$(APP_SERVICE_FILE) ./etc/systemd/system/isuda.js.service
 
 app.service.push:
-	@rsync -av --progress -e ssh --rsync-path='sudo rsync' ./etc/systemd/system/system/isuda.js.service $(SSH_USER)@$(SSH_HOST):$(APP_SERVICE_FILE)
+	@rsync -av --progress -e ssh --rsync-path='sudo rsync' ./etc/systemd/system/isuda.js.service $(SSH_USER)@$(SSH_HOST):$(APP_SERVICE_FILE)
 	@ssh $(SSH_USER)@$(SSH_HOST) sudo systemctl daemon-reload
 
 app.service.status:
