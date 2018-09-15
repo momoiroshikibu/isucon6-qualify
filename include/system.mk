@@ -1,3 +1,6 @@
+systemd.status:
+	@ssh $(SSH_USER)@$(SSH_HOST) sudo systemctl status
+
 # http://man7.org/linux/man-pages/man1/systemd.1.html
 systemd.loglevel:
 	@ssh $(SSH_USER)@$(SSH_HOST) sudo systemctl show -pLogLevel
