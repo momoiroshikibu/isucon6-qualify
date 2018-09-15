@@ -2,3 +2,4 @@ Vagrantfile
 .vagrant
 *console.log
 .logs
+.make_targets
